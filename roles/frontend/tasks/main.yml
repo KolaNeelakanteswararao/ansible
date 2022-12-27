@@ -1,3 +1,27 @@
-- name: print
-  debug:
-    msg: Hello frontend component
+- name: Install Nginx
+  ansible.builtin.yum:
+    name: nginx
+    state: latest
+
+- name: Download Frontend from git repo and extract it
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
+- name: Remove previous Content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
+
+- name: Copy Roboshop content
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html/
+    remote_src: yes
+
+- name: Start Nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+    enabled: yes
