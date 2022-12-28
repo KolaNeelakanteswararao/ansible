@@ -2,7 +2,7 @@
   ansible.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongo.repo
-    ignore_unreachable: yes
+    ignore_unreachable: true
 
 - name: Install MongoDb
   ansible.builtin.yum:
