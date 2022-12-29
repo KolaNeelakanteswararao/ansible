@@ -45,3 +45,11 @@
     - cart
   roles:
     - cart
+
+- name: Setup Mysql component
+  hosts: MYSQL
+  become: yes
+  tags:
+    - mysql
+  roles:
+    - mysql
