@@ -70,7 +70,6 @@
   roles:
     - rabbitmq
 
-
 - name: Setup Payment component
   hosts: PAYMENT
   become: yes
@@ -78,3 +77,12 @@
     - payment
   roles:
     - payment
+
+
+- name: Setup Dispatch component
+  hosts: DISPATCH
+  become: yes
+  tags:
+    - dispatch
+  roles:
+    - dispatch
