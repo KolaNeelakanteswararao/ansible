@@ -5,7 +5,7 @@
   ansible.builtin.yum:
     name:
       - rabbitmq-server
-      - https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh
+      - erlang
     state: installed
 
 - name: Start RabbitMQ
