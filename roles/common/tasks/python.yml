@@ -19,7 +19,7 @@
 - name: Replace UID and GID in {{COMPONENT}} configuration
   lineinfile:
     path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
-    search_string: "{{item.serach}}"
+    search_string: "{{item.search}}"
     line: "{{item.search}}={{item.replace}}"
   loop:
     - { search: uid, replace: "{{appUser.uid}}"}
