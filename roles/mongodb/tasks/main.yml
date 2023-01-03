@@ -24,17 +24,17 @@
   import_role:
     name: common
     tasks_from: download
-#
-#- name: Load Schema
-#  community.mongodb.mongodb_shell:
-#    file: "/tmp/mongodb-main/{{item}}.js"
-#    idempotent: yes
-#  loop:
-#    - catalogue
-#    - users
 
 - name: Load Schema
-  shell: mongo < "/tmp/mongodb-main/{{item.js}}"
+  community.mongodb.mongodb_shell:
+    file: "/tmp/mongodb-main/{{item}}.js"
+    idempotent: yes
   loop:
     - catalogue
     - users
+#
+#- name: Load Schema
+#  shell: mongo < "/tmp/mongodb-main/{{item.js}}"
+#  loop:
+#    - catalogue
+#    - users
