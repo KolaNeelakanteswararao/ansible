@@ -34,7 +34,7 @@
 #    - users
 
 - name: Load Schema
-  shell: mongo <"/tmp/mongodb-main/{{item.js}}"
+  shell: mongo < "/tmp/mongodb-main/{{item.js}}"
   loop:
     - catalogue
     - users
