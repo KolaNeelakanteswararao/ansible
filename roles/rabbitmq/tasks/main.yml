@@ -31,7 +31,7 @@
   ignore_errors: yes
 
 - name: Set Tags for user
-  shell: rabbitmqctl set_user_tags roboshop.administrator
+  shell: rabbitmqctl set_user_tags roboshop administrator
 
 - name: Set Previleges for user
   shell: rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
