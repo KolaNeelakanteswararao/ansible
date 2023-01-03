@@ -13,15 +13,25 @@
     name: rabbitmq-server
     state: started
     enabled: yes
+#
+#- name: Setup Roboshop application user in RabbitMQ
+#  community.rabbitmq.rabbitmq_user:
+#    user: roboshop
+#    password: roboshop123
+#    vhost: /
+#    configure_priv: .*
+#    read_priv: .*
+#    write_priv: .*
+#    state: present
+#    tags:
+#      - administrator
 
-- name: Setup Roboshop application user in RabbitMQ
-  community.rabbitmq.rabbitmq_user:
-    user: roboshop
-    password: roboshop123
-    vhost: /
-    configure_priv: .*
-    read_priv: .*
-    write_priv: .*
-    state: present
-    tags:
-      - administrator
+- name: Create user in RabbitMQ
+  shell: rabbitmqctl add_user roboshop roboshop123
+  ignore_errors: yes
+
+- name: Set Tags for user
+  shell: rabbitmqctl set_user_tags roboshop.administrator
+
+- name: Set Previleges for user
+  shell: rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
