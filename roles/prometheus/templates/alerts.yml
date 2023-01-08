@@ -24,6 +24,7 @@ groups:
         for: 1m
         labels:
           severity: critical
+          component: {{component.componentName}}
         annotations:
           summary: {{component.serviceName}} service Alert
 
