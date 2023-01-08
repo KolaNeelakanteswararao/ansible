@@ -1,0 +1,8 @@
+COMPONENTS:
+  - { componentName: "Frontend", serviveName:"nginx" }
+  - { componentName: "Cart", serviveName:"cart" }
+  - { componentName: "Catalogue", serviveName:"catalogue" }
+  - { componentName: "User", serviveName:"user" }
+  - { componentName: "Shipping", serviveName:"shipping" }
+  - { componentName: "Payment", serviveName:"payment" }
+  - { componentName: "Dispatch", serviveName:"dispatch" }
