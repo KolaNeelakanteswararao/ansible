@@ -9,7 +9,7 @@ receivers:
     email_configs:
       - to: "${neelakanta554@gmail.com}"
         from: "${neelakanta554@gmail.com}"
-        smarthost: "email-smtp.us-east-1.amazonaws.com:587"
+        smarthost: "email-smtp.us-east-1.amazonaws.com"
         auth_username: "{{SES_USER}}"
         auth_password: "{{SES_PASS}}"
 inhibit_rules:
