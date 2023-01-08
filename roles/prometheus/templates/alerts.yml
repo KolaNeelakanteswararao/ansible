@@ -18,6 +18,7 @@ groups:
           summary: High Disk Usage Alert Critical
 
   {% for component in COMPONENT %}
+  
       - alert: {{component.componentName}}ServiceAlert
         expr: node_systemd_unit_state{name="{{component.serviceName}}.service",state="Active"} == 0
         for: 1m
@@ -25,4 +26,5 @@ groups:
           severity: critical
         annotations:
           summary: {{component.serviceName}} service Alert
+
   {% endfor %}
