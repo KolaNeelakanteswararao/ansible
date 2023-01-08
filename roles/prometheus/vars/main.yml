@@ -1,8 +1,8 @@
 COMPONENTS:
-  - {componentName: "Frontend", serviveName: "nginx"}
-  - {componentName: "Cart", serviveName: "cart"}
-  - {componentName: "Catalogue", serviveName: "catalogue"}
-  - {componentName: "User", serviveName: "user"}
-  - {componentName: "Shipping", serviveName: "shipping"}
-  - {componentName: "Payment", serviveName: "payment"}
-  - {componentName: "Dispatch", serviveName: "dispatch"}
+  - {componentName: "Frontend", serviceName: "nginx"}
+  - {componentName: "Cart", serviceName: "cart"}
+  - {componentName: "Catalogue", serviceName: "catalogue"}
+  - {componentName: "User", serviceName: "user"}
+  - {componentName: "Shipping", serviceName: "shipping"}
+  - {componentName: "Payment", serviceName: "payment"}
+  - {componentName: "Dispatch", serviceName: "dispatch"}
