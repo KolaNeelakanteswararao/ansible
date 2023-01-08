@@ -1,5 +1,5 @@
 groups:
-  - name: Roboshop alerts
+  - name: RoboshopAlerts
     rules:
       - alert: DiskUsageAlertWarning
         expr: ceil((node_filesystem_size_bytes{mountpoint="/"}-node_filesystem_avail_bytes{mountpoint="/"})/node_filesystem_size_bytes{mountpoint="/"}*100) > 50
@@ -17,8 +17,8 @@ groups:
         annotations:
           summary: High Disk Usage Alert Critical
 
-  {% for component in COMPONENT %}
-  
+  {% for component in COMPONENTS %}
+
       - alert: {{component.componentName}}ServiceAlert
         expr: node_systemd_unit_state{name="{{component.serviceName}}.service",state="Active"} == 0
         for: 1m
