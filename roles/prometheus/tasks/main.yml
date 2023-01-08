@@ -21,6 +21,6 @@
 
 - name: restart Alert Manager
   systemd:
-    name: alertmanger
+    name: alertmanager
     state: restarted
     enabled: yes
