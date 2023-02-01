@@ -5,9 +5,9 @@ filebeat.inputs:
       componentName: {{COMPONENT}}
       env: {{ENV}}
     paths:
-{% for logfile in LOG_FILES %}
+  {% for logfile in LOG_FILES %}
       - {{logfile}}
-{% endfor %}
+  {% endfor %}
 
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
